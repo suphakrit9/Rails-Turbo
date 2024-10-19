@@ -1,0 +1,124 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .main-title {
+    text-align: center;
+    color: #495057;
+    margin: 20px 0;
+    font-size: 45px;
+    letter-spacing: 2px;
+  }
+  
+  .todo-status {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .status-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: background-color 0.3, transform 0.2;
+  }
+  
+  .status-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  .task-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  
+  .task-input {
+    padding: 12px;
+    width: 250px;
+    border: 2px solid #6c757d;
+    border-radius: 25px;
+    margin-right: 10px;
+  }
+  
+  .create-button {
+    padding: 12px 20px;
+    background-color: #28a745;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .create-button:hover {
+    background-color: #218838;
+  }
+  
+  .todos-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    background-color: #f1f1f1;
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    padding: 15px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2;
+  }
+  
+  li:hover {
+    transform: translateY(-2px);
+  }
+  
+  .task-status {
+    font-size: 1.2;
+    color: #495057;
+  }
+  
+  .task-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .check-button {
+    text-decoration: none;
+    transition: transform 0.2;
+    color: inherit;
+    font-size: 25px;
+  }
+  
+  .delete-button {
+    text-decoration: none;
+    transition: transform 0.2;
+    color: inherit;
+    font-size: 25px;
+  }
+
+  .check-button:hover,
+  .delete-button:hover {
+  transform: scale(1.2);
+}
