@@ -1,6 +1,11 @@
 class TasksController < ApplicationController
   def index
-    @tasks = Task.where.not(status: nil)
+    if params[:category_id]
+      @category = Category.find(params[:category_id])
+      @tasks = @category.tasks.where.not(status: nil) 
+    else
+      @tasks = Task.where.not(status: nil)
+    end
     @task = Task.new 
   end
 
@@ -9,7 +14,7 @@ class TasksController < ApplicationController
     @task.status ||= "Incomplete" 
 
     if @task.save
-      redirect_to tasks_path, notice: 'Task was successfully created.'
+      redirect_to category_tasks_path(@task.category_id), notice: 'Task was successfully created.' 
     else
       render :index
     end
@@ -24,8 +29,6 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:status) 
+    params.require(:task).permit(:status, :category_id) 
   end
 end
-
-

@@ -8,6 +8,8 @@
 <div class="task-form">
   <%= form_with(model: @task, local: true, html: { class: "task-form" }) do |form| %>
     <%= form.text_field :status, placeholder: "Enter name....", required: true, class: "task-input" %>
+    <%= form.label :category_id, "Select Category:" %>
+    <%= form.collection_select :category_id, Category.all, :id, :name, { prompt: "Choose a category" }, { class: "task-input" } %>
     <%= form.submit 'Create Todo', class: "create-button" %>
   <% end %>
 </div>
